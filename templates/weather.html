@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-400 to-blue-100 h-screen flex items-center justify-center font-poppins">
+
+    <div class="container mx-auto max-w-sm text-center p-6 bg-white shadow-lg rounded-lg">
+        <div class="weather-card">
+            <div class="location mb-4">
+                <h1 id="city" class="text-4xl font-bold text-gray-800">City Name</h1>
+                <p id="country" class="text-xl text-gray-500">Country</p>
+            </div>
+
+            <div class="weather-info flex flex-col items-center mb-4">
+                <img id="weather-icon" class="w-24 h-24" src="https://openweathermap.org/img/wn/01d@2x.png" alt="weather icon">
+                <h2 id="temperature" class="text-5xl font-semibold text-blue-600"></h2>
+            </div>
+
+            <div class="weather-description">
+                <p id="description" class="text-lg text-gray-600"></p>
+            </div>
+
+            <!-- Search functionality -->
+            <div class="mt-6">
+                <input type="text" id="city-input" placeholder="Enter city name" class="px-4 py-2 rounded-lg shadow-inner w-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                <button id="search-btn" class="mt-4 px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='javascript/weather.js') }}"></script>
+</body>
+</html>
